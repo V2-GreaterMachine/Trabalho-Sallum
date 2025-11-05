@@ -1,0 +1,25 @@
+body{
+    background-color: rgb(229, 243, 238);
+}
+
+header{
+    background-image: linear-gradient(45deg, rgb(96, 189, 153), rgb(9, 165, 105), rgb(14, 148, 97));
+}
+
+h1 {
+   text-align: center; 
+}
+
+#informacoes{
+   
+}
+
+section{
+    background-image: linear-gradient(45deg, rgb(96, 189, 153), rgb(9, 165, 105), rgb(14, 148, 97));
+    
+}
+
+img{
+    width: 40px;
+    height: 40px;
+}
