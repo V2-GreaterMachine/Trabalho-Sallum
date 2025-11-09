@@ -4,39 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="telaPrincipal.css">
-    <title>Gerenciador de Listas</title>
-    </head>
+    <title>Cataloga</title>
+    <link rel="icon" href="imagens/image copy 5.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bitcount+Grid+Double:wght@100..900&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+AU+QLD:wght@100..400&family=Stack+Sans+Notch:wght@200..700&display=swap" rel="stylesheet">
+</head>
 <header>
-    <div>
-        <p id="nome_usuario">t</p>
-    </div>
+    <p id="nome_usuario"></p>
+    <img class="imglogo" src="imagens/image copy 5.png" alt="">
+    <h1 class="logo">Cataloga</h1>
+  <nav>
+    <a class="active">Home</a>
+    <a>Jogos</a>
+    <a>Livros</a>
+    <a>Músicas</a>
+    <a>Filmes</a>
+    <a>Feed</a>
+  </nav>
 </header>
 <body>
-    <div id="informacoes">
-    <h1>Gerenciador de Listas</h1>
-    <p>
-    Bem vindo ao Gerenciador de Listas! Aqui você pode gerenciar uma lista de jogos/livros/músicas/filmes que você quer ou já jogou/leu/ouviu/assistiu. 
-    Nesse sistema, o usuário poderá, inclusive categorizar os itens, filtrar por categoria. Faça uma melhor organização na sua rotina e interesses.
+  <section class="intro">
+    <h2>Organize o que importa</h2>
+    <p>Guarde, acompanhe, revisite e compartilhe seus jogos, livros, músicas e filmes.</p>
+    <p id="explicacao">
+  Bem-vindo ao Gerenciador de Listas.
+  Mantenha seus jogos, livros, músicas e filmes organizados em um só lugar.
+  Registre o que você já concluiu e o que ainda deseja experimentar, classificando cada item por categoria.
+  Isso permite que você visualize suas prioridades, evite esquecer recomendações e tome decisões mais conscientes sobre como quer investir seu tempo.
+  Mais do que listar: é organizar e planejar seus interesses de forma simples e direta.
     </p>
-    </div>
-<section>
-    <div id="jogos">
-        <img src="imagens/image.png" alt="">
-        <h2>Jogos</h2>
-        <p>Adicione seus jogos</p>
-    </div>
-    <div id="livros">
-        <img src="imagens/image copy.png" alt="">
-        <h2>Livros</h2>
-    </div>
-    <div id="musicas">
-        <img src="imagens/image copy 2.png" alt="">
-        <h2>Músicas</h2>
-    </div>
-    <div id="filmes">
-        <img src="imagens/image copy 3.png" alt="">
-        <h2>Filmes</h2>
-    </div>
-</section>
+  </section>
+    <section class="area-listas">
+        <div class="item">
+            <img src="imagens/image copy 4.png" alt="Jogos">
+            <h2>Jogos</h2>
+        </div>
+
+        <div class="item">
+            <img src="imagens/image copy.png" alt="Livros">
+            <h2>Livros</h2>
+        </div>
+
+        <div class="item">
+            <img src="imagens/image copy 2.png" alt="Músicas">
+            <h2>Músicas</h2>
+        </div>
+
+        <div class="item">
+            <img src="imagens/image copy 3.png" alt="Filmes">
+            <h2>Filmes</h2>
+        </div>
+    </section>
 </body>
 </html>
