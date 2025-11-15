@@ -13,8 +13,11 @@ section{
   border-radius: border;
 
   border-bottom: 0cap;
-
+ 
   box-sizing: border-box;
+ 
+  border-color: aliceblue;
+
 }
 
 
