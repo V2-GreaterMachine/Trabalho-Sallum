@@ -10,9 +10,11 @@ section{
 
  background-color: aqua;
   
-  border-radius: border ;
+  border-radius: border;
 
-  
+  border-bottom: 0cap;
+
+  box-sizing: border-box;
 }
 
 
