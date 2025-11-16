@@ -132,6 +132,157 @@ body{
   box-shadow: 0 14px 28px rgba(71, 47, 3, 0.685);
 }
 
+button {
+  background-color: #085c3e9f; /* verde com leve toque azulado */
+  color: #ffffff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.15s ease, background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #26a97d; /* um tom mais escuro no hover */
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+  background-color: #1f8966;
+}
+
+.recomendacoes {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.recomendacoes-conteudo {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+}
+
+.recomendacoes-conteudo textarea {
+  width: 100%;
+  height: 120px;
+  padding: 10px;
+  border-radius: 8px;
+  resize: none;
+  border: 1px solid #ccc;
+}
+
+.recomendacoes-conteudo button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#enviarRecomendacao {
+  background: #2ebd8b;
+  color: white;
+}
+
+.fechar {
+  background: #ccc;
+  color: black;
+}
+
+.carrossel {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 10px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.carrossel::-webkit-scrollbar {
+  height: 6px;
+}
+.carrossel::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.card {
+  min-width: 240px;       /* card um pouco maior */
+  max-width: 240px;
+  height: 300px;           /* altura fixa */
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-snap-align: start;
+  overflow: hidden;        /* garante que o texto não estoure */
+}
+
+.card img {
+  width: 130px;           /* um pouco maior que antes */
+  height: 130px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.card .categoria {
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: #2ebd8b;
+  align-self: flex-start;
+}
+
+.card .texto {
+  font-size: 14px;
+  text-align: center;
+  flex-grow: 1;            /* ocupa o espaço disponível */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;   /* limite de linhas visíveis */
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+}
+
+.card .info {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.scroll-btn {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.carrossel-wrapper:hover .scroll-btn {
+  opacity: 1;
+}
+
+
+
+
+
 
 
 

@@ -29,11 +29,60 @@
         <div class="feed-texto">
             <h2>Feed de Recomendações</h2>
             <p>Descubra o que outras pessoas estão lendo, jogando, assistindo e ouvindo. Compartilhe suas próprias recomendações e ajude outros usuários a encontrar algo novo.</p>
+            <button id="recomendar">Recomendar</button>
         </div>
-        <img class="imgdecor img-lateral" src="imagens/image copy 6.png" alt="Pessoas interagindo em rede.">
-    </div>
+       <div id="recomendacoes" class="recomendacoes">
+  <div class="recomendacoes-conteudo">
+    <h3>Nova recomendação</h3>
+
+    <label for="tipoPost">Tipo de recomendação:</label>
+    <select id="tipoPost">
+        <option value="jogo">Jogo</option>
+        <option value="livro">Livro</option>
+        <option value="filme">Filme</option>
+        <option value="musica">Música</option>
+    </select>
+
+    <label for="imagemPost">Imagem (opcional):</label>
+    <input type="file" id="imagemPost" accept="image/*">
+
+    <label for="textoPost">Recomendação:</label>
+    <textarea id="textoPost" placeholder="Escreva sua recomendação aqui..."></textarea>
+
+    <button id="enviarRecomendacao">Enviar</button>
+    <button id="fecharRecomendacao" class="fechar">Fechar</button>
+  </div>
+</div>
+      <img class="imgdecor img-lateral" src="imagens/image copy 6.png" alt="Pessoas interagindo em rede.">
+  </div>
     
     <img class="imgdecor img-abaixo" src="imagens/image copy 7.png" alt="Pessoas trocando mensagens em janelas de navegador.">
-</section>
+  </section>
+
+<h2 class="titulo-cat">Jogos</h2>
+<div class="carrossel-wrapper"> 
+  <div id="feed-jogos" class="carrossel"></div>
+  <button class="scroll-btn left">&#10094;</button><button class="scroll-btn right">&#10095;</button>
+</div>
+
+<h2 class="titulo-cat">Livros</h2>
+<div class="carrossel-wrapper">
+  <div id="feed-livros" class="carrossel"></div>
+   <button class="scroll-btn left">&#10094;</button><button class="scroll-btn right">&#10095;</button>
+</div>
+
+<h2 class="titulo-cat">Filmes</h2>
+<div class="carrossel-wrapper">
+  <div id="feed-filmes" class="carrossel"></div>
+  <button class="scroll-btn left">&#10094;</button><button class="scroll-btn right">&#10095;</button>
+</div>
+
+<h2 class="titulo-cat">Músicas</h2>
+<div class="carrossel-wrapper">
+  <div id="feed-musicas" class="carrossel"></div>
+  <button class="scroll-btn left">&#10094;</button><button class="scroll-btn right">&#10095;</button>
+</div>
+
+<script src="feed.js"></script>
 </body>
 </html>
