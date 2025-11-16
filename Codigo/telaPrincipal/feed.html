@@ -33,9 +33,9 @@
         </div>
        <div id="recomendacoes" class="recomendacoes">
   <div class="recomendacoes-conteudo">
-    <h3>Nova recomendação</h3>
+    <h3 id="titulo-recomendacoes">Nova recomendação</h3>
 
-    <label for="tipoPost">Tipo de recomendação:</label>
+    <label for="tipoPost" class="textos-card">Tipo de recomendação:</label>
     <select id="tipoPost">
         <option value="jogo">Jogo</option>
         <option value="livro">Livro</option>
@@ -43,10 +43,10 @@
         <option value="musica">Música</option>
     </select>
 
-    <label for="imagemPost">Imagem (opcional):</label>
+    <label for="imagemPost" class="textos-card">Imagem (opcional):</label>
     <input type="file" id="imagemPost" accept="image/*">
 
-    <label for="textoPost">Recomendação:</label>
+    <label for="textoPost" class="textos-card">Recomendação:</label>
     <textarea id="textoPost" placeholder="Escreva sua recomendação aqui..."></textarea>
 
     <button id="enviarRecomendacao">Enviar</button>
