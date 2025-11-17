@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="feed.css">
+    <title>feed</title>
+    <link rel="icon" href="../imagens/logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bitcount+Grid+Double:wght@100..900&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+AU+QLD:wght@100..400&family=Stack+Sans+Notch:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<header>
+    <p id="nome_usuario"></p>
+    <img class="imglogo" src="../imagens/logo.png" alt="">
+    <h1 class="logo">Cataloga</h1>
+  <nav>
+    <a href="../main/main.html">Home</a>
+    <a>Jogos</a>
+    <a>Livros</a>
+    <a>Músicas</a>
+    <a>Filmes</a>
+    <a class="ativado">Feed</a>
+  </nav>
+</header>
+<body>
+   <section class="feed-intro">
+    <div class="feed_topo">
+        <div class="feed-texto">
+            <h2>Feed de Recomendações</h2>
+            <p>Descubra o que outras pessoas estão lendo, jogando, assistindo e ouvindo. Compartilhe suas próprias recomendações e ajude outros usuários a encontrar algo novo.</p>
+            <button id="recomendar">Recomendar</button>
+        </div>
+       <div id="recomendacoes" class="recomendacoes">
+  <div class="recomendacoes-conteudo">
+    <h3 id="titulo-recomendacoes">Nova recomendação</h3>
+
+    <label for="tipoPost" class="textos-card">Tipo de recomendação:</label>
+    <select id="tipoPost">
+        <option value="jogo">Jogo</option>
+        <option value="livro">Livro</option>
+        <option value="filme">Filme</option>
+        <option value="musica">Música</option>
+    </select>
+
+    <label for="imagemPost" class="textos-card">Imagem (opcional):</label>
+    <input type="file" id="imagemPost" accept="image/*">
+
+    <label for="textoPost" class="textos-card">Recomendação:</label>
+    <textarea id="textoPost" placeholder="Escreva sua recomendação aqui..."></textarea>
+
+    <button id="enviarRecomendacao">Enviar</button>
+    <button id="fecharRecomendacao" class="fechar">Fechar</button>
+  </div>
+</div>
+      <img class="imgdecor img-lateral" src="../imagens/extra6.png" alt="Pessoas interagindo em rede.">
+  </div>
+    
+    <img class="imgdecor img-abaixo" src="../imagens/extra7.png" alt="Pessoas trocando mensagens em janelas de navegador.">
+  </section>
+
+<h2 class="titulo-cat">Jogos</h2>
+<div class="carrossel-wrapper"> 
+  <div id="feed-jogos" class="carrossel"></div>
+  <button class="scroll-btn left">&#10094;</button><button class="scroll-btn right">&#10095;</button>
+</div>
+
+<h2 class="titulo-cat">Livros</h2>
+<div class="carrossel-wrapper">
+  <div id="feed-livros" class="carrossel"></div>
+   <button class="scroll-btn left">&#10094;</button><button class="scroll-btn right">&#10095;</button>
+</div>
+
+<h2 class="titulo-cat">Filmes</h2>
+<div class="carrossel-wrapper">
+  <div id="feed-filmes" class="carrossel"></div>
+  <button class="scroll-btn left">&#10094;</button><button class="scroll-btn right">&#10095;</button>
+</div>
+
+<h2 class="titulo-cat">Músicas</h2>
+<div class="carrossel-wrapper">
+  <div id="feed-musicas" class="carrossel"></div>
+  <button class="scroll-btn left">&#10094;</button><button class="scroll-btn right">&#10095;</button>
+</div>
+
+<script src="feed.js"></script>
+</body>
+</html>

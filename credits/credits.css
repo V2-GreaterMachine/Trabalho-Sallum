@@ -1,0 +1,28 @@
+section{
+ 
+ display: grid;
+ 
+  justify-content: center;
+ 
+  align-items: center;
+ 
+  height: 300px;
+
+ background-color: aqua;
+  
+  border-radius: border;
+
+  border-bottom: 0cap;
+ 
+  box-sizing: border-box;
+ 
+  border-color: aliceblue;
+
+}
+
+
+body{
+ 
+    background-color: rgb(73, 206, 128);
+
+}

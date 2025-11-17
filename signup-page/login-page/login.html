@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div id="profile-widget" style="position:fixed;top:8px;right:8px;font-size:0.9em;display:none;">
+        <span id="profile-username"></span>
+        <a href="#" id="profile-logout" style="margin-left:8px;">Sair</a>
+    </div>
+    <p>Nome de usuário(a): <input type="text" id="username" placeholder="Digite seu nome de usuário(a)"></p>
+    <p>Senha: <input type="password" id="password" placeholder="Digite sua senha"></p>
+    <p><button id="login-button">Entrar</button></p>
+    <p>
+        <button id="logout-button">Sair</button>
+        <button id="delete-button">Deletar Conta</button>
+    </p>
+    <p><a href="../signup.html">Não tem conta? Criar conta</a></p>
+    <p id="text-box"></p>
+    <script src="login.js"></script>
+</body>
+</html>
