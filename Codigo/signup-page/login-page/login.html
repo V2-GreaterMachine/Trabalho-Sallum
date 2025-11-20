@@ -4,21 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="icon" href="image copy 5.png" type="image/x-icon">
+    <link rel="stylesheet" href="login.css">
+   
 </head>
 <body>
-    <div id="profile-widget" style="position:fixed;top:8px;right:8px;font-size:0.9em;display:none;">
-        <span id="profile-username"></span>
-        <a href="#" id="profile-logout" style="margin-left:8px;">Sair</a>
+
+    <div class="left">
+    <div class="login-container">
+            <div class="login-header">
+            <img class="imglogo" src="image copy 5.png" alt="Logo">
+            <h1>Entrar</h1>
+        </div>
+
+        <div class="form-group">
+            <label for="username">Nome de usuário(a):</label>
+            <input type="text" id="username" placeholder="Digite seu nome de usuário(a)">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Senha:</label>
+            <input type="password" id="password" placeholder="Digite sua senha">
+        </div>
+
+        <button id="login-button">Entrar</button>
+
+        <div style="display:flex;gap:10px;">
+            <button id="logout-button">Sair</button>
+            <button id="delete-button">Deletar Conta</button>
+        </div>
+
+        <a href="../signup.html">Não tem conta? Criar conta</a>
+        <p id="text-box"></p>
     </div>
-    <p>Nome de usuário(a): <input type="text" id="username" placeholder="Digite seu nome de usuário(a)"></p>
-    <p>Senha: <input type="password" id="password" placeholder="Digite sua senha"></p>
-    <p><button id="login-button">Entrar</button></p>
-    <p>
-        <button id="logout-button">Sair</button>
-        <button id="delete-button">Deletar Conta</button>
-    </p>
-    <p><a href="../signup.html">Não tem conta? Criar conta</a></p>
-    <p id="text-box"></p>
+</div>
+
+
+    <div class="right"></div>
+
     <script src="login.js"></script>
 </body>
 </html>

@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+body {
+    background-image: url(../image.png);
+    background-size: cover;      
+    background-position: center; 
+    background-repeat: no-repeat;
+    height: 100vh;              
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#profile-widget {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    background: white;
+    padding: 10px 14px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    display: none;
+    font-size: 0.95em;
+    color: #333;
+}
+
+#profile-widget a {
+    margin-left: 12px;
+    color: #3366ff;
+    text-decoration: none;
+}
+
+.signup-container {
+    background: linear-gradient(to bottom, #83bbab, #aef3db, #ffffff);
+    width: 100%;
+    max-width: 380px;
+    padding: 34px 42px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(22, 153, 146, 0.63);
+}
+
+.signup-container h1 {
+    font-size: 1.6em;
+    font-weight: 600;
+    color: #085350;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #0c8d82a6;
+    font-size: 0.95em;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #000820;
+    border-radius: 10px;
+    background: #fafbfc;
+    font-size: 1em;
+    transition: 0.2s ease;
+}
+
+.form-group input:focus {
+    border-color: #03113b;
+    background: #e1f8fc;
+    box-shadow: 0 0 0 3px rgb(104, 157, 170);
+    outline: none;
+}
+
+#signup-button {
+    width: 100%;
+    margin-top: 6px;
+    padding: 12px;
+    background: #0c6d7096;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.05em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#signup-button:hover {
+    background: #25c0db;
+}
+
+#signup-button:active {
+    background: #1d87b8;
+}
+
+.login-link {
+    margin-top: 16px;
+    text-align: center;
+}
+
+.login-link a {
+    color: #33f8ff;
+    text-decoration: none;
+    font-size: 0.95em;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+#text-box {
+    margin-top: 14px;
+    text-align: center;
+    min-height: 22px;
+    font-size: 0.95em;
+    color: #d63c3c;
+}
+
