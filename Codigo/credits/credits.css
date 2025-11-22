@@ -1,28 +1,44 @@
-section{
- 
- display: grid;
- 
+section {
+
+  display: flex;
+
   justify-content: center;
- 
+
   align-items: center;
- 
+
   height: 300px;
 
- background-color: aqua;
-  
-  border-radius: border;
+  background-color: #3498db;
 
-  border-bottom: 0cap;
- 
-  box-sizing: border-box;
- 
-  border-color: aliceblue;
+  width: 100px;
+
+  padding: 70px;
+
+  border: 80px solid #3498db;
+
+  border-radius: 20%;
+
+  margin: 0 auto;
+
+  flex-direction:column ;
 
 }
 
+div{
+  display: flex;
+
+  align-items: center;
+}
+
+#section{
+ 
+ flex-direction:row;
+ 
+}
 
 body{
  
     background-color: rgb(73, 206, 128);
+
 
 }
