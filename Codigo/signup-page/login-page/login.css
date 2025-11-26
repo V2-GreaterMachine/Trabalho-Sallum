@@ -183,15 +183,21 @@ body {
     max-width: 380px;
 }
 
+/* Deixa o logo acima do título, centralizado e profissional */
 .login-header {
     display: flex;
-    align-items: center; 
-    gap: clamp(8px, 2vw, 16px);  
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(10px, 2vw, 20px);
+    margin-bottom: 20px;
 }
 
 .imglogo {
-    width: clamp(40px, 8vw, 60px); 
-    height: auto; 
+    width: clamp(70px, 10vw, 120px);
+    height: auto;
+    padding: clamp(6px, 1vw, 10px);
 }
+
 
 
