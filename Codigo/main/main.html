@@ -11,18 +11,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bitcount+Grid+Double:wght@100..900&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+AU+QLD:wght@100..400&family=Stack+Sans+Notch:wght@200..700&display=swap" rel="stylesheet">
 </head>
 <header>
-    <p id="nome_usuario"></p>
+  <p id="nome_usuario"></p>
     <img class="imglogo" src="../imagens/logo.png" alt="">
     <h1 class="logo">Cataloga</h1>
   <nav>
     <a class="ativado">Home</a>
-    <a>Jogos</a>
-    <a>Livros</a>
-    <a>Músicas</a>
-    <a>Filmes</a>
+    <a href="../listas/lista_jogos.html">Jogos</a>
+    <a href="../listas/lista_livros.html">Livros</a>
+    <a href="../listas/lista_musicas.html">Músicas</a>
+    <a href="../listas/lista_filmes.html">Filmes</a>
     <a href="../feed/feed.html">Feed</a>
     <a href="../signup-page/login-page/login.html">Login</a>
   </nav>
+  <!-- Profile widget: shows current username and logout action -->
+  <div id="profile-widget" class="profile-widget" style="display:none;">
+    <span id="profile-username" class="profile-username"></span>
+    <a href="#" id="profile-logout" class="profile-logout">Sair</a>
+  </div>
 </header>
 <body>
   <section class="intro">
@@ -58,4 +63,5 @@
         </div>
     </section>
 </body>
+    <script src="profile.js"></script>
 </html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="lista.css">
+  <title>Lista de Livros — Lidos / Desejo ler</title>
+</head>
+<body>
+  <a class="home-button" href="../main/main.html" aria-label="Voltar para a página principal">Página inicial</a>
+  <div class="app" id="app">
+    <header>
+      <div>
+        <h1>Minha Lista de Livros</h1>
+        <p>Adicione livros que já leu ou que deseja ler.</p>
+      </div>
+   
+    </header>
+
+    <div class="main">
+      <section>
+        <div class="card">
+          <form id="form">
+            <div class="input-wrap">
+              <input id="title" type="text" placeholder="Título do livro (ex: Dom Casmurro)" required />
+              <select id="status">
+                <option value="desejo">Desejo ler</option>
+                <option value="lido">Lido</option>
+              </select>
+            </div>
+            <button class="add" type="submit">Adicionar</button>
+          </form>
+
+          <div style="margin-top:16px">
+            <div class="stats">
+              <div class="pill" id="total">0 livros</div>
+              <div style="color:var(--muted);font-weight:600">•</div>
+              <div class="meta" id="counts">0 lidos • 0 desejo</div>
+            </div>
+
+            <ul class="filmes" id="lista"></ul>
+            <div class="empty" id="empty">Nenhum livro adicionado ainda. Comece adicionando um título acima.</div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <div class="card">
+          <h3>Controles rápidos</h3>
+          <p class="meta">Filtros e ações para organizar sua lista.</p>
+          <div style="display:flex;gap:8px;margin-top:10px">
+            <button class="btn" id="filter-all">Todos</button>
+            <button class="btn" id="filter-lidos">Lidos</button>
+            <button class="btn" id="filter-desejo">Desejo ler</button>
+          </div>
+          <hr style="margin:12px 0;border:none;border-top:1px solid rgba(0,0,0,0.04)">
+          <button class="btn delete" id="clear">Limpar tudo</button>
+        </div>
+      </aside>
+    </div>
+
+   
+  </div>
+
+  <script src="lista_livros.js"></script>
+</body>
+</html>
