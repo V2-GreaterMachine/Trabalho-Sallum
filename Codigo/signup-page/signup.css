@@ -28,7 +28,8 @@ body {
 .right {
     width: 55%;
     height: 100vh;
-    background-image: url(../image.png);
+    /* use project wallpaper for account pages */
+    background-image: url("../imagens/account-page-wallpaper.jpg");
     background-size: cover;
     background-position: center;
 }
