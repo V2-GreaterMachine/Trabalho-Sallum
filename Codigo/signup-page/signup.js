@@ -18,6 +18,8 @@ function doSignup(){
         return;
     }
 
+    // Try to register on server, but if network/server returns an error,
+    // fallback to saving the account locally in localStorage.
     fetch('/api/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -28,7 +30,12 @@ function doSignup(){
         if (data && data.ok){
             console.log("Signup successful (server). Username:", username.value);
             localStorage.setItem('username', username.value);
+            // mark that a local account can be present
             localStorage.setItem('local-account-exists?', 1);
+            // store in the users map for local fallback
+            let users = JSON.parse(localStorage.getItem('users') || '{}');
+            users[username.value] = password.value;
+            localStorage.setItem('users', JSON.stringify(users));
             textbox.innerHTML = "Conta criada com sucesso!";
             updateProfile();
         } else if (data && data.message){
@@ -40,8 +47,25 @@ function doSignup(){
         }
     })
     .catch(err => {
-        console.error("Network or server error during signup:", err);
-        textbox.innerHTML = "Erro de rede — tente novamente mais tarde";
+        // Instead of returning a network error, create a local account in localStorage.
+        console.warn("Network or server error during signup; saving account locally:", err);
+        const name = username.value;
+        const pass = password.value;
+        if (!name || !pass){
+            textbox.innerHTML = 'Por favor, preencha nome de usuário e senha.';
+            return;
+        }
+        let users = JSON.parse(localStorage.getItem('users') || '{}');
+        if (users[name]){
+            textbox.innerHTML = 'Nome de usuário já existe (localmente). Tente outro.';
+            return;
+        }
+        users[name] = pass;
+        localStorage.setItem('users', JSON.stringify(users));
+        localStorage.setItem('username', name);
+        localStorage.setItem('local-account-exists?', 1);
+        textbox.innerHTML = 'Conta criada localmente (offline). Você pode fazer login agora.';
+        updateProfile();
     });
 }
 
@@ -62,7 +86,6 @@ if (signupButton) signupButton.addEventListener('click', doSignup);
 function doLogout(){
     localStorage.removeItem('username');
     localStorage.removeItem('logged-in?');
-    localStorage.removeItem('local-account-exists?');
     textbox.innerHTML = 'Você saiu da conta.';
     updateProfile();
 }

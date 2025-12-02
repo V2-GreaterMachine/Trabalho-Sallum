@@ -20,6 +20,7 @@ function updateProfile(){
 }
 
 function doLogin(){
+    // Try login against server, but if not available, validate against localStorage users map
     fetch('/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -34,13 +35,37 @@ function doLogin(){
             console.log('Login successful for', username.value);
             updateProfile();
         } else {
-            textbox.innerHTML = data.message || 'Falha no login';
-            console.log('Login failed', data);
+            // If server responds but indicates login failed, try local fallback
+            console.log('Login failed (server):', data);
+            const users = JSON.parse(localStorage.getItem('users') || '{}');
+            const name = username.value;
+            const pass = password.value;
+            if (users[name] && users[name] === pass){
+                localStorage.setItem('username', name);
+                localStorage.setItem('logged-in?', 1);
+                textbox.innerHTML = 'Login efetuado localmente (offline)!';
+                updateProfile();
+            } else {
+                textbox.innerHTML = data.message || 'Falha no login';
+            }
         }
     })
     .catch(err => {
-        console.error('Network/login error', err);
-        textbox.innerHTML = 'Erro de rede — tente novamente mais tarde';
+        // Fallback to localStorage validation instead of showing a network error
+        console.warn('Network/login error; falling back to local login:', err);
+        const users = JSON.parse(localStorage.getItem('users') || '{}');
+        const name = username.value;
+        const pass = password.value;
+        if (users[name] && users[name] === pass){
+            localStorage.setItem('username', name);
+            localStorage.setItem('logged-in?', 1);
+            textbox.innerHTML = 'Login efetuado localmente (offline)!';
+            updateProfile();
+        } else if (!users[name]){
+            textbox.innerHTML = 'Conta não encontrada localmente. Se estiver offline, cadastre uma conta primeiro.';
+        } else {
+            textbox.innerHTML = 'Senha incorreta.';
+        }
     });
 }
 
@@ -52,7 +77,6 @@ password.addEventListener('keydown', function(e){ if (e.key == 'Enter') doLogin(
 function doLogout(){
     localStorage.removeItem('username');
     localStorage.removeItem('logged-in?');
-    localStorage.removeItem('local-account-exists?');
     textbox.innerHTML = 'Você saiu da conta.';
     updateProfile();
 }
@@ -82,14 +106,41 @@ function doDeleteAccount(){
     .then(data => {
         if (data && data.ok){
             textbox.innerHTML = 'Conta deletada com sucesso.';
+            // also remove local copy if any
+            const name = username.value;
+            let users = JSON.parse(localStorage.getItem('users') || '{}');
+            if (users[name]){
+                delete users[name];
+                localStorage.setItem('users', JSON.stringify(users));
+            }
+            if (Object.keys(users).length === 0){
+                localStorage.removeItem('local-account-exists?');
+            }
             doLogout();
         } else {
             textbox.innerHTML = data.message || 'Falha ao deletar conta.';
         }
     })
     .catch(err => {
-        console.error('Error deleting account', err);
-        textbox.innerHTML = 'Erro de rede — tente novamente mais tarde';
+        // If network fails, attempt to delete the account from localStorage
+        console.warn('Error deleting account (server). Attempting to delete local account:', err);
+        const users = JSON.parse(localStorage.getItem('users') || '{}');
+        const name = username.value;
+        const pass = password.value;
+        if (users[name] && users[name] === pass){
+            delete users[name];
+            localStorage.setItem('users', JSON.stringify(users));
+            // if no more users, clear the marker
+            if (Object.keys(users).length === 0){
+                localStorage.removeItem('local-account-exists?');
+            }
+            textbox.innerHTML = 'Conta deletada localmente.';
+            doLogout();
+        } else if (!users[name]){
+            textbox.innerHTML = 'Conta não encontrada localmente.';
+        } else {
+            textbox.innerHTML = 'Senha incorreta.';
+        }
     });
 }
 
