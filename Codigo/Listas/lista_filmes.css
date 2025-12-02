@@ -1,0 +1,100 @@
+ :root{
+      --aqua:#0fae8a;
+      --aqua-light:#d8f5ec;
+      --brown:#8a4b27;
+      --bg:#f3eee8;
+      --card:#ffffff;
+      --border:#f1d9b3;
+      --muted:#6b6b6b;
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family: Inter, Arial, sans-serif;
+      margin:0;min-height:100vh;background:var(--bg);
+      color:var(--brown);
+      padding:24px;
+    }
+    .app{
+      width:100%;max-width:960px;margin:auto;
+    }
+    header{
+      text-align:center;margin-bottom:26px;
+    }
+    header h1{
+      margin:0;font-size:2.3rem;font-weight:800;color:var(--brown);
+    }
+    header p{
+      margin:6px 0 0;color:var(--aqua);font-size:1.1rem;font-weight:600;
+    }
+
+    .card{
+      background:var(--card);
+      padding:20px;border-radius:14px;
+      border:2px solid var(--border);
+      box-shadow:0 4px 10px rgba(0,0,0,0.06);
+      margin-bottom:26px;
+    }
+
+    form{
+        display:flex;gap:14px;flex-wrap:wrap
+    }
+    .input-wrap{
+        flex:1;min-width:240px
+    }
+    input[type="text"]{
+      width:100%;padding:14px;border-radius:10px;border:2px solid var(--aqua);
+      font-size:1rem;background:#fff;
+    }
+    select{
+      padding:14px;border-radius:10px;border:2px solid var(--aqua);
+      font-size:1rem;background:#fff;
+    }
+
+    button.add{
+      background:var(--aqua);color:#fff;border:none;padding:14px 18px;
+      border-radius:10px;font-weight:700;font-size:1rem;cursor:pointer;
+      transition:0.2s;
+    }
+    button.add:hover{opacity:0.9}
+
+    h2{
+      color:var(--brown);margin-bottom:10px;font-size:1.4rem;
+      border-left:6px solid var(--aqua);
+      padding-left:10px;
+    }
+
+    ul.filmes{list-style:none;padding:0;margin:0}
+    li.filme{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:14px;border-radius:12px;background:#fff;
+      border:2px solid var(--border);
+      margin-bottom:10px;
+    }
+
+    .badge{
+      width:14px;height:14px;border-radius:50%;background:var(--aqua);
+    }
+
+    .title{
+        font-weight:700;font-size:1.05rem
+    }
+    .meta{
+        font-size:0.9rem;color:var(--muted)
+    }
+
+    .btn{
+        padding:8px 10px;border-radius:8px;cursor:pointer;font-weight:600;border:none
+    }
+    .btn.toggle{
+        background:var(--aqua);color:#fff
+    }
+    .btn.delete{
+        background:#fff;border:2px solid var(--brown);color:var(--brown)
+    }
+    .btn.edit{
+        background:#fff;border:2px solid var(--aqua);color:var(--aqua)
+    }
+
+    .empty{
+        text-align:center;padding:20px;color:var(--muted);font-weight:600
+    }
