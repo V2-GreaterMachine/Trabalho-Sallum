@@ -4,15 +4,15 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="lista.css">
-  <title>Lista de Filmes — Assistidos / Desejo ver</title>
+  <title>Lista de Jogos — Jogados / Desejo jogar</title>
 </head>
 <body>
   <a class="home-button" href="../main/main.html" aria-label="Voltar para a página principal">Página inicial</a>
   <div class="app" id="app">
     <header>
       <div>
-        <h1>Minha Lista de Filmes</h1>
-        <p>Adicione filmes que já assistiu ou que deseja ver.</p>
+        <h1>Minha Lista de Jogos</h1>
+        <p>Adicione jogos que já jogou ou que deseja jogar.</p>
       </div>
    
     </header>
@@ -22,10 +22,10 @@
         <div class="card">
           <form id="form">
             <div class="input-wrap">
-              <input id="title" type="text" placeholder="Título do filme (ex: O Poderoso Chefão)" required />
+              <input id="title" type="text" placeholder="Título do jogo (ex: The Legend of Zelda)" required />
               <select id="status">
-                <option value="desejo">Desejo ver</option>
-                <option value="assistido">Assistido</option>
+                <option value="desejo">Desejo jogar</option>
+                <option value="jogado">Jogado</option>
               </select>
             </div>
             <button class="add" type="submit">Adicionar</button>
@@ -33,13 +33,13 @@
 
           <div style="margin-top:16px">
             <div class="stats">
-              <div class="pill" id="total">0 filmes</div>
+              <div class="pill" id="total">0 jogos</div>
               <div style="color:var(--muted);font-weight:600">•</div>
-              <div class="meta" id="counts">0 assistidos • 0 desejo</div>
+              <div class="meta" id="counts">0 jogados • 0 desejo</div>
             </div>
 
             <ul class="filmes" id="lista"></ul>
-            <div class="empty" id="empty">Nenhum filme adicionado ainda. Comece adicionando um título acima.</div>
+            <div class="empty" id="empty">Nenhum jogo adicionado ainda. Comece adicionando um título acima.</div>
           </div>
         </div>
       </section>
@@ -50,8 +50,8 @@
           <p class="meta">Filtros e ações para organizar sua lista.</p>
           <div style="display:flex;gap:8px;margin-top:10px">
             <button class="btn" id="filter-all">Todos</button>
-            <button class="btn" id="filter-assistidos">Assistidos</button>
-            <button class="btn" id="filter-desejo">Desejo ver</button>
+            <button class="btn" id="filter-jogados">Jogados</button>
+            <button class="btn" id="filter-desejo">Desejo jogar</button>
           </div>
           <hr style="margin:12px 0;border:none;border-top:1px solid rgba(0,0,0,0.04)">
           <button class="btn delete" id="clear">Limpar tudo</button>
@@ -62,6 +62,6 @@
    
   </div>
 
-  <script src="lista_filmes.js"></script>
+  <script src="lista_jogos.js"></script>
 </body>
 </html>

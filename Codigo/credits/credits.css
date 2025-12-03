@@ -52,3 +52,10 @@ section img {
     font-size: 18px;
     margin-top: 10px;
 }
+
+    button.add{
+      background:var(--aqua);color:#fff;border:none;padding:14px 18px;
+      border-radius:10px;font-weight:700;font-size:1rem;cursor:pointer;
+      transition:0.2s;
+    }
+    button.add:hover{opacity:0.9}
